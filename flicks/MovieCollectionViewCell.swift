@@ -28,6 +28,7 @@ extension MovieCollectionViewCell: Updatable {
         titleLabel.text = movie.title
         summaryLabel.text = movie.summary
         imageView.image = nil
+        imageView.alpha = 0.0
         let request = URLRequest(url: movie.posterURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
         imageView.setImageWith(request, placeholderImage: nil, success: { (request, response, image) in
             // Success
@@ -37,6 +38,9 @@ extension MovieCollectionViewCell: Updatable {
             }
             
             self.imageView.image = image
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.imageView.alpha = 1.0
+            })
             
             }, failure: { request, response, error in
                 // failure, do nothing
