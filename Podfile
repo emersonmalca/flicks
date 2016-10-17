@@ -7,5 +7,6 @@ target 'flicks' do
 
   # Pods for flicks
   pod 'AFNetworking', '~> 3.1'
+  pod 'MBProgressHUD', '~> 1.0'
 
 end

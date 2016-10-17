@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class MoviesViewController: UIViewController {
     
@@ -26,7 +27,10 @@ class MoviesViewController: UIViewController {
         collectionView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
         // Get the movies
-        getMovies(completion: nil)
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        getMovies {
+            hud.hide(animated: true)
+        }
     }
     
     func didPullToRefresh(sender: UIRefreshControl) {
