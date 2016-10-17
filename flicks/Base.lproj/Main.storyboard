@@ -62,11 +62,31 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xi6-8x-Ywe">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️ Network Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTA-8y-xg0">
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.90104166666666663" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="uTA-8y-xg0" firstAttribute="leading" secondItem="Xi6-8x-Ywe" secondAttribute="leading" constant="8" id="B2N-ZM-q6x"/>
+                                    <constraint firstAttribute="trailing" secondItem="uTA-8y-xg0" secondAttribute="trailing" constant="8" id="Lsc-z2-EUR"/>
+                                    <constraint firstAttribute="bottom" secondItem="uTA-8y-xg0" secondAttribute="bottom" constant="6" id="QxB-Az-HUB"/>
+                                    <constraint firstAttribute="height" constant="32" id="cqD-zU-CYD"/>
+                                    <constraint firstItem="uTA-8y-xg0" firstAttribute="top" secondItem="Xi6-8x-Ywe" secondAttribute="top" constant="5" id="eeu-xD-Xvx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xi6-8x-Ywe" secondAttribute="trailing" id="QzP-Cd-goF"/>
+                            <constraint firstItem="Xi6-8x-Ywe" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="RR1-4Q-4ve"/>
                             <constraint firstAttribute="bottom" secondItem="E71-gS-lFT" secondAttribute="bottom" id="SHo-xU-WdA"/>
                             <constraint firstItem="E71-gS-lFT" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="YO0-Pj-M8X"/>
+                            <constraint firstItem="Xi6-8x-Ywe" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="jy6-ri-LSt"/>
                             <constraint firstItem="E71-gS-lFT" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="pGm-9C-IJs"/>
                             <constraint firstAttribute="trailing" secondItem="E71-gS-lFT" secondAttribute="trailing" id="xZR-os-LMI"/>
                         </constraints>
@@ -74,6 +94,7 @@
                     <navigationItem key="navigationItem" title="Now Playing" id="QfM-YL-ihM"/>
                     <connections>
                         <outlet property="collectionView" destination="E71-gS-lFT" id="rbq-f5-oRv"/>
+                        <outlet property="errorView" destination="Xi6-8x-Ywe" id="Tz3-MI-D8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -253,18 +274,39 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGq-fi-LEV">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️ Network Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-mG-BoL">
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.90104166669999997" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4uu-mG-BoL" firstAttribute="leading" secondItem="jGq-fi-LEV" secondAttribute="leading" constant="8" id="3pe-9g-26O"/>
+                                    <constraint firstAttribute="trailing" secondItem="4uu-mG-BoL" secondAttribute="trailing" constant="8" id="VOw-S9-tDP"/>
+                                    <constraint firstItem="4uu-mG-BoL" firstAttribute="top" secondItem="jGq-fi-LEV" secondAttribute="top" constant="5" id="oz5-hU-LFP"/>
+                                    <constraint firstAttribute="bottom" secondItem="4uu-mG-BoL" secondAttribute="bottom" constant="6" id="s0p-wt-ZEx"/>
+                                    <constraint firstAttribute="height" constant="32" id="t9X-ss-rnY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jGq-fi-LEV" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="2RW-l0-3mN"/>
+                            <constraint firstAttribute="trailing" secondItem="jGq-fi-LEV" secondAttribute="trailing" id="IEy-aW-P3n"/>
                             <constraint firstAttribute="trailing" secondItem="d8j-1x-rmW" secondAttribute="trailing" id="N4D-7t-aH4"/>
                             <constraint firstItem="d8j-1x-rmW" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="OHp-4k-rhO"/>
                             <constraint firstAttribute="bottom" secondItem="d8j-1x-rmW" secondAttribute="bottom" id="gbP-d7-4Z4"/>
+                            <constraint firstItem="jGq-fi-LEV" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="oF5-cx-nVO"/>
                             <constraint firstItem="d8j-1x-rmW" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="odV-ym-w5J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Top Rated" id="8bu-Ed-RH3"/>
                     <connections>
                         <outlet property="collectionView" destination="d8j-1x-rmW" id="ekR-SH-b4Q"/>
+                        <outlet property="errorView" destination="jGq-fi-LEV" id="8Sg-YM-5Ao"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

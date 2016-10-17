@@ -14,9 +14,13 @@ class MoviesViewController: UIViewController {
     let api = API()
     let dataSource = MoviesDataSource<MovieCollectionViewCell>()
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var errorView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Hide error view
+        errorView.alpha = 0.0
 
         // Set the data source
         collectionView.dataSource = dataSource
@@ -39,13 +43,23 @@ class MoviesViewController: UIViewController {
         }
     }
     
+    func animateErrorView(toAlpha alpha: CGFloat) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.errorView.alpha = alpha
+        })
+    }
+    
     func getMovies(completion: (() -> ())?) {
         // Get the movies now playing
         api.getMovies(moviesPath()) { (movies, error) in
             guard error == nil && movies !=  nil else {
                 // Show error
+                self.animateErrorView(toAlpha: 1.0)
                 return
             }
+            
+            // Hide error if any
+            self.animateErrorView(toAlpha: 0.0)
             
             // Update data source
             self.dataSource.update(withMovies: movies!)
