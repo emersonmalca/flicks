@@ -21,6 +21,21 @@ class MoviesViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         
+        // Set refresh control
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        
+        // Get the movies
+        getMovies(completion: nil)
+    }
+    
+    func didPullToRefresh(sender: UIRefreshControl) {
+        getMovies { 
+            sender.endRefreshing()
+        }
+    }
+    
+    func getMovies(completion: (() -> ())?) {
         // Get the movies now playing
         api.getMovies(moviesPath()) { (movies, error) in
             guard error == nil && movies !=  nil else {
@@ -31,6 +46,11 @@ class MoviesViewController: UIViewController {
             // Update data source
             self.dataSource.update(withMovies: movies!)
             self.collectionView.reloadSections(IndexSet(integer: 0))
+            
+            // Call completion if any
+            if let callback = completion {
+                callback()
+            }
         }
     }
     
