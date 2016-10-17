@@ -36,12 +36,14 @@ class API: NSObject {
                         let id = String(res["id"] as! Int)
                         let title = res["title"] as! String
                         let summary = res["overview"] as! String
+                        let date = res["release_date"] as! String
+                        let ratings = Double(res["vote_average"] as! NSNumber) 
                         // we only want the movies with posters
                         if let relPath = res["poster_path"] as? String {
                             let thumbURL = URL(string: "https://image.tmdb.org/t/p/w300" + relPath)!
-                            let posterURL = URL(string: "https://image.tmdb.org/t/p/w500" + relPath)!
+                            let posterURL = URL(string: "https://image.tmdb.org/t/p/w1000" + relPath)!
                             
-                            let movie = Movie(id: id, title: title, summary: summary, posterURL: posterURL, thumbnailURL: thumbURL)
+                            let movie = Movie(id: id, title: title, summary: summary, posterURL: posterURL, thumbnailURL: thumbURL, date: date, ratings: ratings)
                             movies.append(movie)
                         }
                     }

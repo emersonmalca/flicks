@@ -33,14 +33,23 @@ class MoviesViewController: UIViewController {
             self.collectionView.reloadSections(IndexSet(integer: 0))
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func moviesPath() -> APIMoviesPath {
         return .NowPlaying
+    }
+    
+    func movieDetailViewModel(from movie: Movie) -> MovieDetailViewModel {
+        let fm = DateFormatter()
+        fm.dateFormat = "yyyy-mm-dd"
+        let date = fm.date(from: movie.date)
+        fm.dateFormat = "MMMM dd, yyyy"
+        let dateString = fm.string(from: date!)
+        
+        let ratingsString = String(Int(movie.ratings*10.0)) + "%"
+        
+        let viewModel = MovieDetailViewModel(title: movie.title, date: dateString, rating: ratingsString, duration: "", summary: movie.summary, posterURL: movie.posterURL)
+        
+        return viewModel
     }
 
 }
@@ -58,7 +67,7 @@ extension MoviesViewController: UICollectionViewDelegate {
             
             // Get the movie and set it
             let movie = dataSource.movie(at: indexPath.item)
-            vc.movie = movie
+            vc.movie = movieDetailViewModel(from: movie)
             
             navigationController?.pushViewController(vc, animated: true)
         }

@@ -1,5 +1,5 @@
 //
-//  Movie.swift
+//  MovieDetailViewModel.swift
 //  flicks
 //
 //  Created by emersonmalca on 10/16/16.
@@ -8,12 +8,11 @@
 
 import Foundation
 
-struct Movie {
-    let id: String
+struct MovieDetailViewModel {
     let title: String
+    let date: String
+    let rating: String
+    let duration: String
     let summary: String
     let posterURL: URL
-    let thumbnailURL: URL
-    let date: String
-    let ratings: Double
 }
