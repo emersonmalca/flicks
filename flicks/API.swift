@@ -9,16 +9,21 @@
 import UIKit
 import AFNetworking
 
+enum APIMoviesPath: String {
+    case NowPlaying = "/3/movie/now_playing"
+    case TopRated = "/3/movie/top_rated"
+}
+
 class API: NSObject {
     
     let manager = AFHTTPSessionManager(baseURL: URL(string: "https://api.themoviedb.org"))
     let apiKey = "e4248711c374686a1d9ac7c965468654"
 
-    func getNowPlaying(withCompletion completion:@escaping (([Movie]?, Error?) -> Void)) {
+    func getMovies(_ path: APIMoviesPath, withCompletion completion:@escaping (([Movie]?, Error?) -> Void)) {
         
         // Get now playing
         manager.requestSerializer = AFJSONRequestSerializer()
-        manager.get("/3/movie/now_playing", parameters: ["api_key": apiKey], progress: nil, success: { task, response in
+        manager.get(path.rawValue, parameters: ["api_key": apiKey], progress: nil, success: { task, response in
             // Success
             print(response)
             if let topDict = response as? Dictionary<String, Any> {
