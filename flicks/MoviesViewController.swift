@@ -42,17 +42,6 @@ class MoviesViewController: UIViewController {
     func moviesPath() -> APIMoviesPath {
         return .NowPlaying
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -60,7 +49,20 @@ extension MoviesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        // Show detail view controller
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController {
+            
+            // Get the thumbnail if possible
+            if let cell = collectionView.cellForItem(at: indexPath) as? MovieCollectionViewCell {
+                vc.tempImage = cell.imageView.image
+            }
+            
+            // Get the movie and set it
+            let movie = dataSource.movie(at: indexPath.item)
+            vc.movie = movie
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
 }
 

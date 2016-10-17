@@ -80,6 +80,42 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="Xf4-0f-vEL">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="6Zo-9Y-ggN" customClass="MovieDetailViewController" customModule="flicks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r4H-aB-5EX"/>
+                        <viewControllerLayoutGuide type="bottom" id="kBg-Xo-pgM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xbS-0S-7Nd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O8B-pm-EFn"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mND-2Q-Pds"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mND-2Q-Pds" firstAttribute="leading" secondItem="xbS-0S-7Nd" secondAttribute="leading" id="4r6-DX-G4f"/>
+                            <constraint firstItem="kBg-Xo-pgM" firstAttribute="top" secondItem="mND-2Q-Pds" secondAttribute="bottom" id="FW0-vk-9qL"/>
+                            <constraint firstAttribute="trailing" secondItem="mND-2Q-Pds" secondAttribute="trailing" id="IuP-cf-DWf"/>
+                            <constraint firstItem="kBg-Xo-pgM" firstAttribute="top" secondItem="O8B-pm-EFn" secondAttribute="bottom" id="JQo-ud-NBA"/>
+                            <constraint firstItem="O8B-pm-EFn" firstAttribute="leading" secondItem="xbS-0S-7Nd" secondAttribute="leading" id="YUC-KV-h6R"/>
+                            <constraint firstItem="mND-2Q-Pds" firstAttribute="top" secondItem="xbS-0S-7Nd" secondAttribute="top" id="ZHm-Hc-jI0"/>
+                            <constraint firstAttribute="trailing" secondItem="O8B-pm-EFn" secondAttribute="trailing" id="fRV-Ma-QsO"/>
+                            <constraint firstItem="O8B-pm-EFn" firstAttribute="top" secondItem="xbS-0S-7Nd" secondAttribute="top" id="hl9-Hc-6f1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="O8B-pm-EFn" id="T0n-2p-OfB"/>
+                        <outlet property="scrollView" destination="mND-2Q-Pds" id="dVP-N4-e03"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qkg-ye-1QF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2580" y="-848.72563718140941"/>
+        </scene>
         <!--Top Rated-->
         <scene sceneID="wg7-f3-ORb">
             <objects>

@@ -23,10 +23,18 @@ class MoviesDataSource<T>: NSObject, UICollectionViewDataSource where T: Updatab
     
     var movies = [Movie]()
     
+    /*
+        Custom methods
+    */
+    
     func update(withMovies movies:[Movie]) {
         
         self.movies.removeAll()
         self.movies.append(contentsOf: movies)
+    }
+    
+    func movie(at index: Int) -> Movie {
+        return self.movies[index]
     }
     
     

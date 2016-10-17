@@ -13,5 +13,5 @@ struct Movie {
     let title: String
     let summary: String
     let posterURL: URL
-    
+    let thumbnailURL: URL
 }

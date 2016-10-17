@@ -38,10 +38,10 @@ class API: NSObject {
                         let summary = res["overview"] as! String
                         // we only want the movies with posters
                         if let relPath = res["poster_path"] as? String {
-                            let posterPath = "https://image.tmdb.org/t/p/w500" + relPath
-                            let posterURL = URL(string: posterPath)!
+                            let thumbURL = URL(string: "https://image.tmdb.org/t/p/w300" + relPath)!
+                            let posterURL = URL(string: "https://image.tmdb.org/t/p/w500" + relPath)!
                             
-                            let movie = Movie(id: id, title: title, summary: summary, posterURL: posterURL)
+                            let movie = Movie(id: id, title: title, summary: summary, posterURL: posterURL, thumbnailURL: thumbURL)
                             movies.append(movie)
                         }
                     }
