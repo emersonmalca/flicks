@@ -173,11 +173,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Now Playing-->
         <scene sceneID="TyG-uc-Z46">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HS0-ng-Gch" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zns-22-v7s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -192,11 +192,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--Top Rated-->
         <scene sceneID="LG4-o7-tJo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L0C-s9-eme" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Top Rated" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="reX-OC-4iG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
